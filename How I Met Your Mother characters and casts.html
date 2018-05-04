@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+     <TITLE>How I Met Your Mother: characters and casts</TITLE>	 
+<META http-equiv="Content-Type" content="text/html;charset=utf-8">   
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>   
+<BODY>
+<CENTER><B>
+<H1>How I Met Your Mother: characters and casts</H1></B>	 </CENTER>
+<CENTER><IMG height="64" alt="circle" src="How%20I%20Met%20Your%20Mother%20characters%20and%20casts_files/circle.svg"> 
+</CENTER>
+<SCRIPT type="text/javascript">
+try //Internet Explorer
+{
+  var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+}
+catch(e)
+{
+  try //Firefox, Mozilla, Opera, etc.
+    {
+	   xmlDoc = document.implementation.createDocument("","",null);
+    }
+  catch(e) {alert(e.message)}
+}
+try 
+{
+  xmlDoc.async = false;
+  xmlDoc.load("characters.xml");
+}
+catch(e) {alert(e.message)}
+try 
+{
+  document.write("<table width='400'>");
+  var x = xmlDoc.getElementsByTagName("char");
+  for (i = 0;i < x.length;i++)
+  {
+      var name = "Name:"; 
+	  name = name.bold( );
+      document.write(name + x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue);
+      document.write("<br>");
+	  
+	  var cast = "Cast:"; 
+	  cast = cast.bold( );
+      document.write(cast + x[i].getElementsByTagName("Cast")[0].childNodes[0].nodeValue);
+      document.write("<br>");
+	  
+	  var gender = "Gender:"; 
+	  gender = gender.bold( );
+	  document.write(gender + x[i].getElementsByTagName("Gender")[0].childNodes[0].nodeValue);
+      document.write("<br>");
+	  
+	  var info = "Info:"; 
+	  info = info.bold( );
+	  document.write(info + x[i].getElementsByTagName("Info")[0].childNodes[0].nodeValue);
+      document.write("<br><br><br>");
+  }
+  document.write("</table>");
+}
+catch(e) {alert(e.message)}
+</SCRIPT>
+	 </BODY></HTML>
